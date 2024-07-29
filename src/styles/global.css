@@ -1,0 +1,17 @@
+:root {
+  --MEDIUM_BG: #1E283C;
+  --LIGHT_BG: #2F3845;
+  --MEDIUM_BORDER: #122339;
+  --PRIMARY_COLOR: rgb(255, 255, 255);
+  --SECONDARY_COLOR: rgb(255, 255, 255, 0.5);
+  --PRIMART_FONT: "Roboto", sans-serif;
+  --HEADER_HEIGHT: 6rem;
+}
+
+* {
+  font-family: var(--PRIMART_FONT);
+  color: var(--PRIMARY_COLOR);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

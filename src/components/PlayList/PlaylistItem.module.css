@@ -1,0 +1,46 @@
+.playlist-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem 2rem;
+    border-bottom: 2px solid var(--MEDIUM_BORDER);
+}
+
+.playlist-item:hover {
+    background-color: var(--LIGHT_BG);
+    cursor: pointer;
+}
+
+.playlist-item div {
+    height: 100%;
+    margin: auto 0;
+}
+
+.playlist-image {
+    display: flex;
+    flex-direction: row;
+    width: 20%;
+}
+
+.playlist-artist {
+    color: var(--PRIMARY_COLOR);
+}
+
+.playlist-track {
+    color: var(--SECONDARY_COLOR);
+}
+
+.playlist-play {
+    flex-grow: 4;
+    display: flex;
+    justify-content: flex-end;
+    color: black;
+}
+
+.playlist-play span {
+    font-weight: 900;
+    border-radius: 50%;
+    background-color: white;
+    color: black;
+}

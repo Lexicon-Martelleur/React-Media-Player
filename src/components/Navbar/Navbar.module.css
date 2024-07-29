@@ -1,0 +1,28 @@
+.navbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-inline: 0.5rem;
+  padding-top: 1rem;
+  z-index: 1000;
+  background-color: var(--MEDIUM_BG);
+  height: var(--HEADER_HEIGHT);
+  border-bottom: 2px solid var(--MEDIUM_BORDER);
+}
+
+.navbar-title {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.navbar-icon {
+  font-size: 2.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
