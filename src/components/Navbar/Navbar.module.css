@@ -14,15 +14,12 @@
   border-bottom: 2px solid var(--MEDIUM_BORDER);
 }
 
-.navbar-title {
+.navbar * {
   display: flex;
   justify-content: center;
   align-items: center; 
 }
 
-.navbar-icon {
-  font-size: 2.4rem;
-  display: flex;
-  justify-content: center;
-  align-items: center; 
+.navbar span {
+  font-size: 2.4rem; 
 }

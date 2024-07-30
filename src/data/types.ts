@@ -2,7 +2,7 @@ export interface IPlaylistItem {
   id: number;
   artist: string;
   track: string;
-  image: any; 
+  image: IImage;
 }
 
 export interface IImage {

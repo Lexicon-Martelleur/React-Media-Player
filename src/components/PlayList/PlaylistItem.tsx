@@ -12,17 +12,17 @@ export const PlaylistItem: React.FC<Props> = ({
   playlistItem
 }): ReactElement => {
   return (
-    <section className={styles["playlist-item"]}>
-      <div className={styles["playlist-image"]}>
+    <section className={styles.playlistItem}>
+      <div className={styles.playlistImage}>
         <Image image={playlistItem.image}/>
       </div>
       <div>
-        <h3 className={styles["playlist-artist"]}>{playlistItem.artist}</h3>
-        <p className={styles["playlist-track"]}>{playlistItem.track}</p>
+        <h3 className={styles.playlistArtist}>{playlistItem.artist}</h3>
+        <p className={styles.playlistTrack}>{playlistItem.track}</p>
       </div>  
-      <div className={styles["playlist-play"]}>
+      <div className={styles.playlistPlay}>
         <span 
-          className={`material-symbols-outlined ${styles["navbar-icon"]}`}>
+          className={`material-symbols-outlined ${styles.navbarIcon}`}>
           arrow_right
         </span>
       </div>      

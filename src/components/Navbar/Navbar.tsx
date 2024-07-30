@@ -7,12 +7,14 @@ export const Navbar = (): ReactElement => {
     <>
       <nav className={styles.navbar}>
         <span 
-          className={`material-symbols-outlined ${styles["navbar-icon"]}`}>
+          className="material-symbols-outlined">
           chevron_left
         </span>
-        <h1 className={styles["navbar-title"]}>Playlist - Mock List</h1>
+        <h1 className={styles.navbarTitle}>
+          Playlist - Mock List
+        </h1>
         <span 
-          className={`material-symbols-outlined ${styles["navbar-icon"]}`}>
+          className="material-symbols-outlined">
           more_vert
         </span>
       </nav>
