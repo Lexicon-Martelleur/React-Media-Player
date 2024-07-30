@@ -1,3 +1,8 @@
+.container {
+    container-type: inline-size;
+    container-name: mediacontroller;
+}
+
 .media-controller {
     display: flex;
     flex-direction: row;
@@ -13,7 +18,7 @@
     width: 60%;
 }
 
-@media (min-width: 500px) {
+@container mediacontroller (min-width: 500px) {
     .media-play-controller {
         width: 40%;
     }
@@ -23,7 +28,7 @@
     }
 }
 
-@media (min-width: 900px) {
+@container mediacontroller (min-width: 900px) {
     .media-play-controller {
         width: 30%;
     }
@@ -32,4 +37,3 @@
         padding-inline: 9rem;
     }
 }
-

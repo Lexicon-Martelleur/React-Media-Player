@@ -1,0 +1,11 @@
+.play-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-height: calc(100vh - var(--HEADER_HEIGHT));
+    overflow: hidden;
+}
+
+.playlist {
+    overflow: auto;
+}

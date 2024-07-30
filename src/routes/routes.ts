@@ -1,9 +1,9 @@
 export const pages = {
   start: "start",
-  playList: "playList",
+  playlist: "playlist",
   playEntry: "playEntry",
 } as const;
 
 export type pageType = typeof pages[
   keyof typeof pages
-]
+];

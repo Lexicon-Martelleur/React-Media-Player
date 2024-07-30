@@ -1,7 +1,16 @@
 import { useState } from "react";
 import { getDefaultPlayList, getPlayListsDataByID, getPlayLists, getDefaultPlayEntry, getPlayEntryByID } from "../service";
+import { IPlaylist, IPlaylistItem } from "../data";
 
-export const usePlaylistService = () => {
+export interface PlaylistServiceHookReturnValue {
+  playlist: IPlaylistItem[];
+  playEntry: IPlaylistItem;
+  getAllPlaylists: () => IPlaylist[];
+  updatePlayList: (listID: number) => void;
+  updatePlayEntry: (entryID: number) => void;
+}
+
+export const usePlaylistService = (): PlaylistServiceHookReturnValue => {
   const [playlist, setPlaylist] = useState(getDefaultPlayList());
   const [playEntry, setPlayEntry] = useState(getDefaultPlayEntry());
 

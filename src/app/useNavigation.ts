@@ -1,7 +1,16 @@
 import { useState } from "react";
 import { pageType } from "../routes/routes";
 
-export const useNavigation = () => {
+
+export interface NavigationHookReturnValue {
+  getCurrentPageTitle: () => string;
+  navigateTo: (page: pageType, pageTitle: string, action?: () => void) => void;
+  prevPage: () => void;
+  isPage: (page: pageType) => boolean;
+  isStartPage: () => boolean;
+}
+
+export const useNavigation = (): NavigationHookReturnValue => {
   const [pageStack, setPageStack] = useState<{
     page: pageType,
     pageTitle: string

@@ -7,7 +7,7 @@ import styles from "./MediaController.module.css";
 
 export const MediaController: React.FC = (): ReactElement => {
   return (
-    <div className={styles.mediaController}>
+    <div className={`${styles.mediaController} ${styles.container}}`}>
       <Icon size="medium" icon={icons.repeat} />
       <div className={styles.mediaPlayController}>
         <Icon size="large" icon={icons.fastRewind} />
