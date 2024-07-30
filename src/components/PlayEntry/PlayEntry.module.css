@@ -25,11 +25,12 @@
 
 .play-entry-artist {
     color: var(--PRIMARY_COLOR);
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 .play-entry-track {
     color: var(--SECONDARY_COLOR);
+    font-size: 1.2rem;
 }
 
 .play-entry-description h1 {
@@ -37,3 +38,5 @@
     flex-direction: column;
     align-items: center;
 }
+
+

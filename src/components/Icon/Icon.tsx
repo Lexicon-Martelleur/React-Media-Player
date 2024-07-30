@@ -2,6 +2,7 @@ import { ReactElement } from "react";
 
 import { IIcon } from "../../types";
 import styles from "./Icon.module.css";
+import { IconSizeType } from "./types";
 
 interface Props {
   icon: IIcon;

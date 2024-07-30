@@ -13,7 +13,7 @@
   border-bottom: 2px solid var(--MEDIUM_BORDER);
 }
 
-.navbar > * {
+.navbar-item {
   padding: 1rem;
   display: flex;
   justify-content: center;
@@ -21,6 +21,5 @@
 }
 
 .navbar-icon {
-  font-size: 2.4rem;
   cursor: pointer;
 }

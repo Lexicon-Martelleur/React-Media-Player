@@ -3,6 +3,9 @@ import fastForward from "./fast_forward.svg";
 import fastRewind from "./fast_rewind.svg";
 import repeat from "./repeat.svg";
 import shuffle from "./shuffle.svg";
+import moreVertical from "./more_vertical.svg";
+import leftArrow from "./left_arrow.svg"
+
 
 export const icons = {
   play: {
@@ -29,5 +32,15 @@ export const icons = {
     src: shuffle,
     alt: "Shuffle icon",
     title: "Shuffle"
+  },
+  moreVertical: {
+    src: moreVertical,
+    alt: "More options",
+    title: "More optios"
+  },
+  prevPage: {
+    src: leftArrow,
+    alt: "Previouse page",
+    title: "Previouse page"
   }
 } as const;
