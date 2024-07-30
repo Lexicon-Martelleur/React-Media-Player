@@ -1,4 +1,4 @@
-.body {
+.main {
   background-color: var(--MEDIUM_BG);
   min-height: 100vh;
   padding: var(--HEADER_HEIGHT) 0 0.5rem 0;

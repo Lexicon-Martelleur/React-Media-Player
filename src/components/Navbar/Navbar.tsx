@@ -2,19 +2,30 @@ import { ReactElement } from "react";
 
 import styles from "./Navbar.module.css";
 
-export const Navbar = (): ReactElement => {
+interface Props {
+  title: string;
+  isStartPage: boolean;
+  onNavigateBack: () => void;
+}
+
+export const Navbar: React.FC<Props> = ({
+  title,
+  isStartPage,
+  onNavigateBack
+}): ReactElement => {
   return (
     <>
       <nav className={styles.navbar}>
-        <span 
-          className="material-symbols-outlined">
+        {!isStartPage && <span 
+          className={`material-symbols-outlined ${styles.navbarIcon}`}
+          onClick={() => onNavigateBack()}>
           chevron_left
-        </span>
+        </span>}
         <h1 className={styles.navbarTitle}>
-          Playlist - Mock List
+          {title}
         </h1>
         <span 
-          className="material-symbols-outlined">
+          className={`material-symbols-outlined ${styles.navbarIcon}`}>
           more_vert
         </span>
       </nav>

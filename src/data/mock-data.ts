@@ -1,7 +1,19 @@
-import { IPlaylistItem } from "./types";
+import { IPlaylist, IPlaylistItem } from "./types";
 import { images } from "../assets";
 
-export const playlistOne: IPlaylistItem[] = [
+export const playlistOne: IPlaylist = {
+  id: 1,
+  description: "Playlist One",
+  thumbnail: { src: images.mockSong, alt: "Playlist One" }
+};
+
+export const playlistTwo: IPlaylist = {
+  id: 2,
+  description: "Playlist Two",
+  thumbnail: { src: images.mockSong, alt: "Playlist Two" }
+}
+
+export const playlistOneData: IPlaylistItem[] = [
   {
     id: 1,
     artist: "The Beatles",
@@ -58,7 +70,7 @@ export const playlistOne: IPlaylistItem[] = [
   }
 ];
 
-export const playlistTwo: IPlaylistItem[] = [
+export const playlistTwoData: IPlaylistItem[] = [
   {
     id: 10,
     artist: "Coldplay",

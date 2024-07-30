@@ -1,3 +1,9 @@
+export interface IPlaylist {
+  id: number
+  description: string
+  thumbnail: IImage;
+}
+
 export interface IPlaylistItem {
   id: number;
   artist: string;

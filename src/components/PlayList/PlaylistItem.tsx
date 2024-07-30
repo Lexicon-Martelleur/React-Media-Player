@@ -3,16 +3,20 @@ import { ReactElement } from "react";
 import { IPlaylistItem } from "../../data";
 import { Image } from "../Image";
 import styles from "./PlaylistItem.module.css";
+import { PlayButton } from "../PlayButton";
 
 interface Props {
   playlistItem: IPlaylistItem;
+  onSelectPlayEntry: () => void;
 }   
 
 export const PlaylistItem: React.FC<Props> = ({
-  playlistItem
+  playlistItem,
+  onSelectPlayEntry
 }): ReactElement => {
   return (
-    <section className={styles.playlistItem}>
+    <section className={styles.playlistItem}
+      onClick={onSelectPlayEntry}>
       <div className={styles.playlistImage}>
         <Image image={playlistItem.image}/>
       </div>
@@ -21,11 +25,8 @@ export const PlaylistItem: React.FC<Props> = ({
         <p className={styles.playlistTrack}>{playlistItem.track}</p>
       </div>  
       <div className={styles.playlistPlay}>
-        <span 
-          className={`material-symbols-outlined ${styles.navbarIcon}`}>
-          arrow_right
-        </span>
-      </div>      
+        <PlayButton />
+      </div>   
     </section>
   )
 }
