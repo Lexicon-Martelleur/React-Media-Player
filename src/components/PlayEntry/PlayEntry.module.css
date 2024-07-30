@@ -4,11 +4,36 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    min-height: calc(99vh - var(--HEADER_HEIGHT));
+    height: 100%;
     padding: 2rem;
+    min-height: calc(100vh - var(--HEADER_HEIGHT));
+    max-width: 1000px;
 }
 
-.play-entry figure {
-    width: 100%;
+.play-entry-figure {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+.play-entry-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.play-entry-artist {
+    color: var(--PRIMARY_COLOR);
+    font-size: 2rem;
+}
+
+.play-entry-track {
+    color: var(--SECONDARY_COLOR);
+}
+
+.play-entry-description h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

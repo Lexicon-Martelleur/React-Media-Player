@@ -6,16 +6,15 @@ import styles from "./Playlist.module.css"
 
 interface Props {
   playlistItems: IPlaylistItem[];
-  onSelectPlayEntry: (item: IPlaylistItem) => void;
+  onSelectPlayEntry: (entry: IPlaylistItem) => void;
 }
 
 export const Playlist: React.FC<Props> = ({
   playlistItems,
   onSelectPlayEntry
 }): ReactElement => {
-  
   return (
-    <section className={styles.playlist}>
+    <section className={styles.playlistContainer}>
       {playlistItems.map(entry => <PlaylistItem
         key={entry.id}
         playlistItem={entry}

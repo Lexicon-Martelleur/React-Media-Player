@@ -25,7 +25,7 @@ export const PlaylistItem: React.FC<Props> = ({
         <p className={styles.playlistTrack}>{playlistItem.track}</p>
       </div>  
       <div className={styles.playlistPlay}>
-        <PlayButton />
+        <PlayButton size="medium"/>
       </div>   
     </section>
   )

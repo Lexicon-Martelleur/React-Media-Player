@@ -1,5 +1,2 @@
-import mockSong from "./song-image.png";
-
-export const images = {
-  mockSong,
-};
+export * from "./img";
+export * from "./icons";

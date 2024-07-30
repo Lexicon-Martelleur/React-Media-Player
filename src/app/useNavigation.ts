@@ -2,15 +2,13 @@ import { useState } from "react";
 import { pageType } from "../routes/routes";
 
 export const useNavigation = () => {
-    const [pageStack, setPageStack] = useState<{
-      page: pageType,
-      pageTitle: string
-    }[]>([]);
-    // const [pageTitle, setPageTitle] = useState("My Media Player");
-
-    const navigateTo = (page: pageType, pageTitle: string, action?: () => void) => {
+  const [pageStack, setPageStack] = useState<{
+    page: pageType,
+    pageTitle: string
+  }[]>([]);
+  
+  const navigateTo = (page: pageType, pageTitle: string, action?: () => void) => {
     action != null && action()
-    // setPageTitle(pageTitle);
     setPageStack(prevPageStack => [...prevPageStack, { page, pageTitle}]);
   }
 

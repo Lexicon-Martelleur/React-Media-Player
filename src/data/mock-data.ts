@@ -13,6 +13,30 @@ export const playlistTwo: IPlaylist = {
   thumbnail: { src: images.mockSong, alt: "Playlist Two" }
 }
 
+export const playlistThree: IPlaylist = {
+  id: 3,
+  description: "Playlist Three",
+  thumbnail: { src: images.mockSong, alt: "Playlist One" }
+};
+
+export const playlistFour: IPlaylist = {
+  id: 4,
+  description: "Playlist Four",
+  thumbnail: { src: images.mockSong, alt: "Playlist Two" }
+}
+
+export const playlistFive: IPlaylist = {
+  id: 5,
+  description: "Playlist Five",
+  thumbnail: { src: images.mockSong, alt: "Playlist One" }
+};
+
+export const playlistSix: IPlaylist = {
+  id: 6,
+  description: "Playlist Six",
+  thumbnail: { src: images.mockSong, alt: "Playlist Two" }
+}
+
 export const playlistOneData: IPlaylistItem[] = [
   {
     id: 1,

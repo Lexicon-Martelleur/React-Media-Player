@@ -1,35 +1,39 @@
-import {
-  IPlaylist,
-  IPlaylistItem,
-  playlistOne,
-  playlistOneData,
-  playlistTwo,
-  playlistTwoData
-} from "../data";
+import * as data from "../data";
 
-export function getPlayLists (): IPlaylist[] {
-    return [ playlistOne, playlistTwo ];
+export function getPlayLists (): data.IPlaylist[] {
+  return [
+    data.playlistOne,
+    data.playlistTwo,
+    data.playlistThree,
+    data.playlistFour,
+    data.playlistFive,
+    data.playlistSix
+  ];
 }
 
-export function getPlayListsDataByID (id: number): IPlaylistItem[] {
+export function getPlayListsDataByID (id: number): data.IPlaylistItem[] {
     switch(id) {
-      case 1: return playlistOneData;
-      case 2: return playlistTwoData;
-      default: return playlistOneData;  
+      case 1: return data.playlistOneData;
+      case 2: return data.playlistTwoData;
+      case 3: return data.playlistOneData;
+      case 4: return data.playlistTwoData;
+      case 5: return data.playlistOneData;
+      case 6: return data.playlistTwoData;
+      default: return data.playlistOneData;  
     }
 }
 
 export function getPlayEntryByID (
   playEntryID: number,
-  playlist: IPlaylistItem[]
-): IPlaylistItem {
+  playlist: data.IPlaylistItem[]
+): data.IPlaylistItem {
   return playlist.find(item => item.id === playEntryID) ?? getDefaultPlayEntry();
 }
 
-export function getDefaultPlayList (): IPlaylistItem[] {
-  return playlistOneData;
+export function getDefaultPlayList (): data.IPlaylistItem[] {
+  return data.playlistOneData;
 }
 
-export function getDefaultPlayEntry (): IPlaylistItem {
-  return playlistOneData[0];
+export function getDefaultPlayEntry (): data.IPlaylistItem {
+  return data.playlistOneData[0];
 }

@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 
 import { Image } from "../Image";
 import { IPlaylist } from "../../data";
-import styles from "./PlaylistThumbnail.module.css"
+import styles from "./PlaylistThumbnail.module.css";
 
 interface Props {
   playlist: IPlaylist;
@@ -21,5 +21,5 @@ export const PlaylistThumbnail: React.FC<Props> = ({
       </figure>
       <p>{playlist.description}</p>
     </section>  
-  )
+  );
 }

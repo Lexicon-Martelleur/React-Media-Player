@@ -1,12 +1,17 @@
 import { ReactElement } from "react";
+import { icons } from "../../assets";
+import { Icon, IconSizeType } from "../Icon";
 
-export const PlayButton = (): ReactElement => {
+interface Props {
+  size?: IconSizeType
+}
+
+export const PlayButton: React.FC<Props> = ({
+  size
+}): ReactElement => {
   return (
     <>
-      <span 
-        className={`material-symbols-outlined`}>
-        arrow_right
-      </span>
+      <Icon size={size ?? "small"} icon={icons.play} />
     </>
   );
 }

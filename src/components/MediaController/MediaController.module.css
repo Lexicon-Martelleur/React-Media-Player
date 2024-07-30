@@ -1,0 +1,35 @@
+.media-controller {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2rem 0.5rem;
+}
+
+.media-play-controller {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60%;
+}
+
+@media (min-width: 500px) {
+    .media-play-controller {
+        width: 40%;
+    }
+
+    .media-controller {
+        padding-inline: 2rem;
+    }
+}
+
+@media (min-width: 900px) {
+    .media-play-controller {
+        width: 30%;
+    }
+
+    .media-controller {
+        padding-inline: 9rem;
+    }
+}
+

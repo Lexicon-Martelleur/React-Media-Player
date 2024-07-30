@@ -6,15 +6,15 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-inline: 0.5rem;
   padding-top: 1rem;
   z-index: 1000;
-  background-color: var(--MEDIUM_BG);
+  background-color: var(--DARK_BG);
   height: var(--HEADER_HEIGHT);
   border-bottom: 2px solid var(--MEDIUM_BORDER);
 }
 
-.navbar * {
+.navbar > * {
+  padding: 1rem;
   display: flex;
   justify-content: center;
   align-items: center; 

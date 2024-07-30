@@ -29,9 +29,10 @@ export function App(): ReactElement {
         
         {navigation.isPage(pages.playList) && <Playlist
           playlistItems={playlistService.playlist}
-          onSelectPlayEntry={item => navigation.navigateTo(
+          onSelectPlayEntry={entry => navigation.navigateTo(
             pages.playEntry,
-            item.track)}/>}
+            navigation.getCurrentPageTitle(),
+            () => playlistService.updatePlayEntry(entry.id))}/>}
 
         {navigation.isPage(pages.playEntry) && <PlayEntry
           entry={playlistService.playEntry}/>}

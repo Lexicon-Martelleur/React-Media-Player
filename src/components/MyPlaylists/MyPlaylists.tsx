@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 
 import { IPlaylist } from "../../data";
 import { PlaylistThumbnail } from "./PlaylistThumbnail";
-import styles from "./MyPlaylist.module.css"
+import styles from "./MyPlaylist.module.css";
 
 interface Props {
   playlists: IPlaylist[];

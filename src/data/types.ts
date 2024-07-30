@@ -1,6 +1,8 @@
+import { IImage } from "../types";
+
 export interface IPlaylist {
-  id: number
-  description: string
+  id: number;
+  description: string;
   thumbnail: IImage;
 }
 
@@ -9,9 +11,4 @@ export interface IPlaylistItem {
   artist: string;
   track: string;
   image: IImage;
-}
-
-export interface IImage {
-  src: string;
-  alt: string;
 }
