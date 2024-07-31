@@ -23,17 +23,17 @@ export function getPlayListsDataByID (id: number): data.IPlaylistItem[] {
     }
 }
 
-export function getPlayEntryByID (
-  playEntryID: number,
+export function getPlayItemByID (
+  playItemID: number,
   playlist: data.IPlaylistItem[]
 ): data.IPlaylistItem {
-  return playlist.find(item => item.id === playEntryID) ?? getDefaultPlayEntry();
+  return playlist.find(item => item.id === playItemID) ?? getDefaultPlayItem();
 }
 
 export function getDefaultPlayList (): data.IPlaylistItem[] {
   return data.playlistOneData;
 }
 
-export function getDefaultPlayEntry (): data.IPlaylistItem {
+export function getDefaultPlayItem (): data.IPlaylistItem {
   return data.playlistOneData[0];
 }

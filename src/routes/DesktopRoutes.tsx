@@ -5,7 +5,7 @@ import { PlaylistServiceHookReturnValue } from "../app/usePlaylistService";
 import { pages } from "./routes";
 import { MyPlaylists } from "../components/MyPlaylists";
 import { Playlist } from "../components";
-import { PlayEntry } from "../components/PlayEntry";
+import { PlayUnit } from "../components/PlayUnit";
 import styles from "./DesktopRoutes.module.css";
 
 interface Props {
@@ -31,9 +31,9 @@ export const DesktopRoutes: React.FC<Props> = ({
           <Playlist
             className={styles.playlist}
             playlistItems={playlistService.playlist}
-            onSelectPlayEntry={entry => playlistService.updatePlayEntry(entry.id)}/>
-          <PlayEntry
-            entry={playlistService.playEntry} />
+            onSelectPlayItem={playItem => playlistService.updatePlayItem(playItem.id)}/>
+          <PlayUnit
+            playItem={playlistService.playItem} />
         </div>
       )}
     </>

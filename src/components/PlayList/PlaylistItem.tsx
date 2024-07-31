@@ -7,16 +7,16 @@ import { PlayButton } from "../PlayButton";
 
 interface Props {
   playlistItem: IPlaylistItem;
-  onSelectPlayEntry: () => void;
+  onSelectPlayItem: () => void;
 }   
 
 export const PlaylistItem: React.FC<Props> = ({
   playlistItem,
-  onSelectPlayEntry
+  onSelectPlayItem
 }): ReactElement => {
   return (
     <section className={styles.playlistItem}
-      onClick={onSelectPlayEntry}>
+      onClick={onSelectPlayItem}>
       <div className={styles.playlistImage}>
         <Image image={playlistItem.image}/>
       </div>

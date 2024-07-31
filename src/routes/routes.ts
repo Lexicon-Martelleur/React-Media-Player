@@ -1,7 +1,7 @@
 export const pages = {
   start: "start",
   playlist: "playlist",
-  playEntry: "playEntry",
+  playItem: "playEntry",
 } as const;
 
 export type pageType = typeof pages[

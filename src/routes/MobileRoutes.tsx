@@ -5,7 +5,7 @@ import { PlaylistServiceHookReturnValue } from "../app/usePlaylistService";
 import { pages } from "./routes";
 import { MyPlaylists } from "../components/MyPlaylists";
 import { Playlist } from "../components";
-import { PlayEntry } from "../components/PlayEntry";
+import { PlayUnit } from "../components/PlayUnit";
 
 interface Props {
   navigation: NavigationHookReturnValue;
@@ -27,13 +27,13 @@ export const MobileRoutes: React.FC<Props> = ({
       
       {navigation.isPage(pages.playlist) && <Playlist
         playlistItems={playlistService.playlist}
-        onSelectPlayEntry={entry => navigation.navigateTo(
-          pages.playEntry,
+        onSelectPlayItem={playItem => navigation.navigateTo(
+          pages.playItem,
           navigation.getCurrentPageTitle(),
-          () => playlistService.updatePlayEntry(entry.id))}/>}
+          () => playlistService.updatePlayItem(playItem.id))}/>}
 
-      {navigation.isPage(pages.playEntry) && <PlayEntry
-        entry={playlistService.playEntry}/>}
+      {navigation.isPage(pages.playItem) && <PlayUnit
+        playItem={playlistService.playItem}/>}
     </>
   )
 }

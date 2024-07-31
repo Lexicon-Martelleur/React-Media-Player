@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { pageType } from "../routes/routes";
 
+import { pageType } from "../routes/routes";
 
 export interface NavigationHookReturnValue {
   getCurrentPageTitle: () => string;
@@ -23,12 +23,12 @@ export const useNavigation = (): NavigationHookReturnValue => {
 
   const prevPage = () => {
     if (isStartPage()) { return }
-    setPageStack
+    setPageStack;
     setPageStack(prevPageStack => prevPageStack.slice(0, -1));
   }
 
   const isPage = (page: pageType): boolean => {
-    return pageStack[pageStack.length - 1]?.page === page
+    return pageStack[pageStack.length - 1]?.page === page;
   }
 
   const isStartPage = (): boolean => {
@@ -45,5 +45,5 @@ export const useNavigation = (): NavigationHookReturnValue => {
     prevPage,
     isPage,
     isStartPage
-  }
+  };
 }
