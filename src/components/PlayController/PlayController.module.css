@@ -10,6 +10,16 @@
     cursor: pointer
 }
 
+.play-controller-icon-idle {
+    opacity: 0.5;
+    transition: all 0.3s;
+}
+
+.play-controller-icon-idle:hover {
+    opacity: 1;
+    transform: scale(1.3);
+}
+
 @media (min-width: 500px) {
     .play-controller {
         padding: 2rem 4rem;

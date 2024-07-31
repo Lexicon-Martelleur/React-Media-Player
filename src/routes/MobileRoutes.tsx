@@ -34,7 +34,9 @@ export const MobileRoutes: React.FC<Props> = ({
 
       {navigation.isPage(pages.playItem) && <PlayUnit
         playItem={playlistService.playItem}
-        nextTrackAction={playlistService.nextTrackAction} />}
+        isShuffleMode={playlistService.shuffleMode}
+        nextTrackAction={playlistService.nextTrackAction}
+        toggleShuffleMode={playlistService.toggleShuffleMode}/>}
     </>
   )
 }

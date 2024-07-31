@@ -6,20 +6,24 @@ import styles from "./PlayController.module.css";
 
 interface Props {
   isPlaying: boolean;
+  isShuffleMode: boolean;
   play: () => void;
   pause: () => void;
   repeat: () => void;
   fastForward: () => void;
   fastRewind: () => void;
+  toggleShuffleMode: () => void;
 }
 
 export const PlayController: React.FC<Props> = ({
   isPlaying,
+  isShuffleMode,
   play,
   pause,
   repeat,
   fastRewind,
-  fastForward
+  fastForward,
+  toggleShuffleMode
 }): ReactElement => {
   return (
     <div className={`${styles.playController} ${styles.container}}`}>
@@ -41,7 +45,9 @@ export const PlayController: React.FC<Props> = ({
       <div onClick={fastForward}>
         <Icon size="large" icon={icons.fastForward} className={styles.playControllerIcon} />
       </div>
-      <Icon size="medium" icon={icons.shuffle} className={styles.playControllerIcon} />
+      <div onClick={toggleShuffleMode} className={!isShuffleMode ? styles.playControllerIconIdle : ""}>
+        <Icon size="medium" icon={icons.shuffle} className={styles.playControllerIcon} />
+      </div>
     </div>
   );
 }

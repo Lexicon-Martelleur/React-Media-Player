@@ -8,18 +8,21 @@ interface Props {
   playlistItems: IPlaylistItem[];
   className?: string;
   onSelectPlayItem: (playItem: IPlaylistItem) => void;
+  activeTrackIndex?: () => number
 }
 
 export const Playlist: React.FC<Props> = ({
   playlistItems,
   className,
-  onSelectPlayItem
+  onSelectPlayItem,
+  activeTrackIndex
 }): ReactElement => {
   return (
     <section className={`${styles.playlistContainer} ${className}`}>
-      {playlistItems.map(playItem => <PlaylistItem
+      {playlistItems.map((playItem, index) => <PlaylistItem
         key={playItem.id}
         playlistItem={playItem}
+        isActiveTrack={activeTrackIndex != null && activeTrackIndex() === index}
         onSelectPlayItem={() => onSelectPlayItem(playItem)}
       />)}
     </section>

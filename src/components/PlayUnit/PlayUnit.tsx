@@ -5,18 +5,22 @@ import { IPlaylistItem } from "../../data";
 import { PlayController } from "../PlayController";
 import { PlayProgressBar } from "../PlayProgressBar";
 import { Icon } from "../Icon";
-import { audioTracks, icons } from "../../assets";
+import { icons } from "../../assets";
 import styles from "./PlayUnit.module.css";
 import { usePlayUnit } from "./usePlayUnit";
 
 interface Props {
-  playItem: IPlaylistItem,
-  nextTrackAction: () => void
+  playItem: IPlaylistItem;
+  isShuffleMode: boolean;
+  nextTrackAction: () => void;
+  toggleShuffleMode: () => void;
 }
 
 export const PlayUnit: React.FC<Props> = ({
   playItem,
-  nextTrackAction
+  isShuffleMode,
+  nextTrackAction,
+  toggleShuffleMode
 }): ReactElement => {
   const audio = useRef<HTMLAudioElement | null>(null);
   const hook = usePlayUnit(playItem, audio, nextTrackAction);
@@ -41,11 +45,13 @@ export const PlayUnit: React.FC<Props> = ({
       </div>
       <PlayController
         isPlaying={hook.isPlaying}
+        isShuffleMode={isShuffleMode}
         play={hook.play}
         pause={hook.pause}
         repeat={hook.repeat}
         fastForward={hook.fastForward}
-        fastRewind={hook.fastRewind}/>
+        fastRewind={hook.fastRewind}
+        toggleShuffleMode={toggleShuffleMode}/>
 
       <audio
         ref={audio}
@@ -56,5 +62,3 @@ export const PlayUnit: React.FC<Props> = ({
     </section>
   );
 }
-
-// Desert Rain Live at TRD 

@@ -5,11 +5,15 @@
     width: 100%;
     padding: 1rem 2rem;
     border-bottom: 2px solid var(--MEDIUM_BORDER);
+    cursor: pointer;
 }
 
 .playlist-item:hover {
     background-color: var(--LIGHT_BG);
-    cursor: pointer;
+}
+
+.playlist-item-active {
+    background-color: var(--LIGHT_BG);
 }
 
 .playlist-item div {

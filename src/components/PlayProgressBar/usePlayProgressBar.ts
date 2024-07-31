@@ -13,10 +13,14 @@ export const usePlayProgressBar = (
     innerProgressBar.current.style.width = `${currentTimePercentage}%`;
   })
 
-  const secondsToMinutes = (seconds: number) => {
+  const secondsToMinutes = (seconds: number): string => {
     const minutes = Math.floor(seconds / 60);
     const remindingSeconds = seconds - (minutes * 60);
-    return `${minutes}.${Math.floor(remindingSeconds)}`;
+    if (remindingSeconds < 10) {
+      return `${minutes}.0${Math.floor(remindingSeconds)}`;
+    } else {
+      return `${minutes}.${Math.floor(remindingSeconds)}`;
+    }
   }
 
   return {

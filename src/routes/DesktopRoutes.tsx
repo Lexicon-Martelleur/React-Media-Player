@@ -31,10 +31,13 @@ export const DesktopRoutes: React.FC<Props> = ({
           <Playlist
             className={styles.playlist}
             playlistItems={playlistService.playlist}
-            onSelectPlayItem={playItem => playlistService.updatePlayItem(playItem.id)}/>
+            onSelectPlayItem={playItem => playlistService.updatePlayItem(playItem.id)}
+            activeTrackIndex={playlistService.activeTrackIndex}/>
           <PlayUnit
             playItem={playlistService.playItem}
-            nextTrackAction={playlistService.nextTrackAction}/>
+            isShuffleMode={playlistService.shuffleMode}
+            nextTrackAction={playlistService.nextTrackAction}
+            toggleShuffleMode={playlistService.toggleShuffleMode}/>
         </div>
       )}
     </>
