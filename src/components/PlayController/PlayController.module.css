@@ -1,0 +1,13 @@
+.play-controller {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2rem 0.5rem;
+}
+
+@media (min-width: 500px) {
+    .play-controller {
+        padding: 2rem 4rem;
+    }
+}

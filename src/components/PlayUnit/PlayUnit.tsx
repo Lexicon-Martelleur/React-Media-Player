@@ -3,7 +3,7 @@ import { ReactElement } from "react";
 import { Image } from "../Image";
 import { IPlaylistItem } from "../../data";
 import styles from "./PlayUnit.module.css"
-import { MediaController } from "../MediaController";
+import { PlayController } from "../PlayController";
 
 interface Props {
   playItem: IPlaylistItem;
@@ -21,7 +21,7 @@ export const PlayUnit: React.FC<Props> = ({
         <h1 className={styles.playUnitArtist}>{playItem.artist}</h1>
         <p className={styles.playUnitTrack}>{playItem.track}</p>
       </div>
-      <MediaController />
+      <PlayController />
     </section>
   );
 }
