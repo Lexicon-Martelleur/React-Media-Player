@@ -1,12 +1,13 @@
-import { ReactElement, useEffect, useState } from "react";
+import { ReactElement, useRef } from "react";
 
 import { Image } from "../Image";
 import { IPlaylistItem } from "../../data";
 import { PlayController } from "../PlayController";
 import { PlayProgressBar } from "../PlayProgressBar";
 import { Icon } from "../Icon";
+import { audioTracks, icons } from "../../assets";
 import styles from "./PlayUnit.module.css";
-import { icons } from "../../assets";
+import { usePlayUnit } from "./usePlayUnit";
 
 interface Props {
   playItem: IPlaylistItem;
@@ -15,19 +16,8 @@ interface Props {
 export const PlayUnit: React.FC<Props> = ({
   playItem
 }): ReactElement => {
-  const [currentTime, setCurrentTime] = useState(0);
-  const duration = 144;
-
-  // Dummy change used for demonstrate change in progress bar. 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (currentTime >= duration) { 
-        return;
-      }
-      setCurrentTime(prevTime => ++prevTime);
-    }, 1000)
-    return () => { clearInterval(interval) }
-  }, [currentTime])
+  const audio = useRef<HTMLAudioElement | null>(null);
+  const hook = usePlayUnit(playItem, audio);
 
   return (
     <section className={`${styles.playUnit} ${styles.container}`}>
@@ -44,10 +34,20 @@ export const PlayUnit: React.FC<Props> = ({
       </div>
       <div className={styles.playUnitProgressCtr}>
         <PlayProgressBar
-          duration={duration}
-          currentTime={currentTime}/>
+          duration={hook.duration}
+          currentTime={hook.currentTime}/>
       </div>
-      <PlayController />
+      <PlayController
+        isPlaying={hook.isPlaying}
+        play={hook.play}
+        pause={hook.pause}/>
+
+      <audio
+        ref={audio}
+        onTimeUpdate={() => hook.handleTimeUpdate()}>
+        <source src={audioTracks.dummyAudio.src} type="audio/mp3" />
+      </audio>
     </section>
   );
 }
+

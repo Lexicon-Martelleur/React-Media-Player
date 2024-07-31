@@ -1,16 +1,33 @@
 import { ReactElement } from "react";
 
-import { PlayButton } from "../PlayButton";
 import { icons } from "../../assets";
 import { Icon } from "../Icon";
 import styles from "./PlayController.module.css";
 
-export const PlayController: React.FC = (): ReactElement => {
+interface Props {
+  isPlaying: boolean;
+  play: () => void;
+  pause: () => void;
+}
+
+export const PlayController: React.FC<Props> = ({
+  isPlaying,
+  play,
+  pause
+}): ReactElement => {
   return (
     <div className={`${styles.playController} ${styles.container}}`}>
       <Icon size="medium" icon={icons.repeat} className={styles.playControllerIcon} />
       <Icon size="large" icon={icons.fastRewind} className={styles.playControllerIcon} />
-      <PlayButton size="xlarge" />
+      {!isPlaying ? 
+      <div onClick={play}>
+        <Icon size="xlarge" icon={icons.play} className={styles.playControllerIcon}/>
+      </div>
+      :
+      <div onClick={pause}>
+        <Icon size="xlarge" icon={icons.pause} className={styles.playControllerIcon}/>
+      </div>
+      }
       <Icon size="large" icon={icons.fastForward} className={styles.playControllerIcon} />
       <Icon size="medium" icon={icons.shuffle} className={styles.playControllerIcon} />
     </div>

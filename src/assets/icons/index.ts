@@ -7,12 +7,18 @@ import moreVertical from "./more_vertical.svg";
 import leftArrow from "./left_arrow.svg";
 import heart from "./heart.svg";
 import addCircle from "./add_circle.svg";
+import pause from "./pause.svg";
 
 export const icons = {
   play: {
     src: play,
     alt: "Play icon",
     title: "Play"
+  },
+  pause: {
+    src: pause,
+    alt: "Pause icon",
+    title: "Pause"
   },
   fastForward: {
     src: fastForward,

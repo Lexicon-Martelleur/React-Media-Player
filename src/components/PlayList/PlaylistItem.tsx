@@ -2,8 +2,8 @@ import { ReactElement } from "react";
 
 import { IPlaylistItem } from "../../data";
 import { Image } from "../Image";
-import { PlayButton } from "../PlayButton";
-
+import { Icon } from "../Icon";
+import { icons } from "../../assets";
 import styles from "./PlaylistItem.module.css";
 
 interface Props {
@@ -26,7 +26,7 @@ export const PlaylistItem: React.FC<Props> = ({
         <p className={styles.playlistTrack}>{playlistItem.track}</p>
       </div>  
       <div className={styles.playlistPlay}>
-        <PlayButton size="medium"/>
+      <Icon size="medium" icon={icons.play} />
       </div>   
     </section>
   )
