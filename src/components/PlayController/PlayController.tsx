@@ -8,16 +8,20 @@ interface Props {
   isPlaying: boolean;
   play: () => void;
   pause: () => void;
+  repeat: () => void;
 }
 
 export const PlayController: React.FC<Props> = ({
   isPlaying,
   play,
-  pause
+  pause,
+  repeat
 }): ReactElement => {
   return (
     <div className={`${styles.playController} ${styles.container}}`}>
-      <Icon size="medium" icon={icons.repeat} className={styles.playControllerIcon} />
+      <div onClick={repeat}>
+        <Icon size="medium" icon={icons.repeat} className={styles.playControllerIcon} />
+      </div>
       <Icon size="large" icon={icons.fastRewind} className={styles.playControllerIcon} />
       {!isPlaying ? 
       <div onClick={play}>

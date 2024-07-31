@@ -40,7 +40,8 @@ export const PlayUnit: React.FC<Props> = ({
       <PlayController
         isPlaying={hook.isPlaying}
         play={hook.play}
-        pause={hook.pause}/>
+        pause={hook.pause}
+        repeat={hook.repeat}/>
 
       <audio
         ref={audio}

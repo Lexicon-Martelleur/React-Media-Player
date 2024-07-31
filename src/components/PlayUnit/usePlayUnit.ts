@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import { IPlaylistItem } from "../../data";
 
@@ -10,12 +10,16 @@ export const usePlayUnit = (
   const [duration, setDuration] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  useEffect(() => {
+  const reset = useCallback(() => {
     if (audio.current == null) { return; }
     audio.current?.load();
     audio.current.currentTime = 0;
     setCurrentTime(0);
     setIsPlaying(false);
+  }, [playItem, audio])
+
+  useEffect(() => {
+    reset();
   }, [playItem])
 
   useEffect(() => {
@@ -36,6 +40,11 @@ export const usePlayUnit = (
     audio.current.pause();
   }
 
+  const repeat = () => {
+    reset();
+    play();
+  }
+
   const handleTimeUpdate = () => {
     if (audio.current == null) { return; }
     setCurrentTime(audio.current.currentTime);
@@ -47,6 +56,7 @@ export const usePlayUnit = (
     isPlaying,
     play,
     pause,
+    repeat,
     handleTimeUpdate
   }
 }
