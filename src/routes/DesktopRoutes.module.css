@@ -9,3 +9,22 @@
 .playlist {
     overflow: auto;
 }
+
+/* Scrollbar for Safari, Crome, Edge etc, not Firefox */
+.playlist::-webkit-scrollbar {
+    width: 10px; /* Width of the vertical scrollbar */
+    height: 10px; /* Width of horizontal scrollbar */
+}
+
+.playlist::-webkit-scrollbar-track {
+    background: var(--XLIGHT_BG); /* Color of the track  */
+}
+
+.playlist::-webkit-scrollbar-thumb {
+    background: var(--DARK_BG); /* Color of the scroll handle */
+    border-radius: 4px; /* Roundness of the scroll handle */
+}
+
+.playlist::-webkit-scrollbar-thumb:hover {
+    background: var(--LIGHT_BG);; /* Color of the scroll handle when hovered over */
+}
