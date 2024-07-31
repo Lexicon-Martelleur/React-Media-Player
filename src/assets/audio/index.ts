@@ -1,7 +1,7 @@
-import dummyAudio from "./dummy-audio.mp3";
+import gratefuleDead from "./Grateful Dead Live at Fillmore East on 1970-07-11.mp3";
 
 export const audioTracks = {
-  dummyAudio: {
-    src: dummyAudio
+  gratefuleDead: {
+    src: gratefuleDead
   }
 } as const;

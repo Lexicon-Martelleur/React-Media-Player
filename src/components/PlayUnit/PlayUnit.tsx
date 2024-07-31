@@ -45,7 +45,7 @@ export const PlayUnit: React.FC<Props> = ({
       <audio
         ref={audio}
         onTimeUpdate={() => hook.handleTimeUpdate()}>
-        <source src={audioTracks.dummyAudio.src} type="audio/mp3" />
+        <source src={audioTracks.gratefuleDead.src} type="audio/mp3" />
       </audio>
     </section>
   );
