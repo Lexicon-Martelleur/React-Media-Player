@@ -10,14 +10,16 @@ import styles from "./PlayUnit.module.css";
 import { usePlayUnit } from "./usePlayUnit";
 
 interface Props {
-  playItem: IPlaylistItem;
+  playItem: IPlaylistItem,
+  nextTrackAction: () => void
 }
 
 export const PlayUnit: React.FC<Props> = ({
-  playItem
+  playItem,
+  nextTrackAction
 }): ReactElement => {
   const audio = useRef<HTMLAudioElement | null>(null);
-  const hook = usePlayUnit(playItem, audio);
+  const hook = usePlayUnit(playItem, audio, nextTrackAction);
 
   return (
     <section className={`${styles.playUnit} ${styles.container}`}>
@@ -41,14 +43,18 @@ export const PlayUnit: React.FC<Props> = ({
         isPlaying={hook.isPlaying}
         play={hook.play}
         pause={hook.pause}
-        repeat={hook.repeat}/>
+        repeat={hook.repeat}
+        fastForward={hook.fastForward}
+        fastRewind={hook.fastRewind}/>
 
       <audio
         ref={audio}
-        onTimeUpdate={() => hook.handleTimeUpdate()}>
-        <source src={audioTracks.gratefuleDead.src} type="audio/mp3" />
+        onTimeUpdate={hook.handleTimeUpdate}
+        onLoadedData={hook.handleLoadedData}>
+        <source {...playItem.audio} />
       </audio>
     </section>
   );
 }
 
+// Desert Rain Live at TRD 

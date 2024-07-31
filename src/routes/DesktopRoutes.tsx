@@ -33,7 +33,8 @@ export const DesktopRoutes: React.FC<Props> = ({
             playlistItems={playlistService.playlist}
             onSelectPlayItem={playItem => playlistService.updatePlayItem(playItem.id)}/>
           <PlayUnit
-            playItem={playlistService.playItem} />
+            playItem={playlistService.playItem}
+            nextTrackAction={playlistService.nextTrackAction}/>
         </div>
       )}
     </>

@@ -1,7 +1,5 @@
 import { useState } from "react";
-import {
-  getDefaultPlayList,
-  getPlayListsDataByID, getPlayLists, getDefaultPlayItem, getPlayItemByID } from "../service";
+import * as service from "../service";
 import { IPlaylist, IPlaylistItem } from "../data";
 
 export interface PlaylistServiceHookReturnValue {
@@ -10,22 +8,31 @@ export interface PlaylistServiceHookReturnValue {
   getAllPlaylists: () => IPlaylist[];
   updatePlayList: (playlistID: number) => void;
   updatePlayItem: (playItemID: number) => void;
+  nextTrackAction: () => void;
 }
 
 export const usePlaylistService = (): PlaylistServiceHookReturnValue => {
-  const [playlist, setPlaylist] = useState(getDefaultPlayList());
-  const [playItem, setPlayItem] = useState(getDefaultPlayItem());
+  const [playlist, setPlaylist] = useState(service.getDefaultPlayList());
+  const [playItem, setPlayItem] = useState(service.getDefaultPlayItem());
 
   const updatePlayList = (listID: number): void => {
-    setPlaylist(getPlayListsDataByID(listID));
+    setPlaylist(service.getPlayListsDataByID(listID));
   }
 
   const updatePlayItem = (entryID: number): void => {
-    setPlayItem(getPlayItemByID(entryID, playlist));
+    setPlayItem(service.getPlayItemByID(entryID, playlist));
   }
 
   const getAllPlaylists = () => {
-    return getPlayLists();
+    return service.getPlayLists();
+  }
+
+  const nextTrackAction = () => {
+    const currIndex = playlist.indexOf(playItem);
+    const nextIndex = currIndex + 1 >= playlist.length || currIndex === -1
+      ? 0
+      : currIndex + 1;
+    setPlayItem(playlist[nextIndex]);
   }
 
   return {
@@ -33,6 +40,7 @@ export const usePlaylistService = (): PlaylistServiceHookReturnValue => {
     playItem,
     getAllPlaylists,
     updatePlayList,
-    updatePlayItem
+    updatePlayItem,
+    nextTrackAction
   };
 }

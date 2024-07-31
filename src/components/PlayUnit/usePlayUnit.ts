@@ -4,7 +4,8 @@ import { IPlaylistItem } from "../../data";
 
 export const usePlayUnit = (
     playItem: IPlaylistItem,
-    audio: React.MutableRefObject<HTMLAudioElement | null>
+    audio: React.MutableRefObject<HTMLAudioElement | null>,
+    nextTrackAction: () => void
 ) => {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -48,7 +49,34 @@ export const usePlayUnit = (
   const handleTimeUpdate = () => {
     if (audio.current == null) { return; }
     setCurrentTime(audio.current.currentTime);
+    if (audio.current.currentTime === duration && duration !== 0) {
+      setIsPlaying(false);
+      nextTrackAction();
+    }
   };
+
+  const handleLoadedData = () => {
+    play();
+  }
+
+  const fastForward = () => {
+    if (audio.current == null) { return; }
+    const newTime = audio.current.currentTime + 20
+    audio.current.currentTime = newTime > duration
+      ? audio.current.currentTime = duration
+      : audio.current.currentTime = newTime
+    if (currentTime === duration) {
+      setIsPlaying(false);
+    }
+  }
+
+  const fastRewind = () => {
+    if (audio.current == null) { return; }
+    const newTime = audio.current.currentTime - 20
+    audio.current.currentTime = newTime < 0
+      ? audio.current.currentTime = 0
+      : audio.current.currentTime = newTime
+  }
 
   return {
     currentTime,
@@ -57,6 +85,9 @@ export const usePlayUnit = (
     play,
     pause,
     repeat,
-    handleTimeUpdate
+    handleTimeUpdate,
+    handleLoadedData,
+    fastForward,
+    fastRewind
   }
 }

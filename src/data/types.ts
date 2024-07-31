@@ -1,4 +1,4 @@
-import { IImage } from "../types";
+import { IAudio, IImage } from "../types";
 
 export interface IPlaylist {
   id: number;
@@ -11,4 +11,5 @@ export interface IPlaylistItem {
   artist: string;
   track: string;
   image: IImage;
+  audio: IAudio;
 }

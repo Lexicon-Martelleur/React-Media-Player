@@ -33,7 +33,8 @@ export const MobileRoutes: React.FC<Props> = ({
           () => playlistService.updatePlayItem(playItem.id))}/>}
 
       {navigation.isPage(pages.playItem) && <PlayUnit
-        playItem={playlistService.playItem}/>}
+        playItem={playlistService.playItem}
+        nextTrackAction={playlistService.nextTrackAction} />}
     </>
   )
 }
