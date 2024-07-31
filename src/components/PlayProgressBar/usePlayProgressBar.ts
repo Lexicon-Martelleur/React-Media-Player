@@ -8,13 +8,15 @@ export const usePlayProgressBar = (
 
   useEffect(() => {
     if (innerProgressBar.current == null) { return; }
+    console.log(duration)
     const currentTimePercentage = (currentTime / duration) * 100;
-    innerProgressBar.current.style.width = `${currentTimePercentage}%`
-  }, [])
+    innerProgressBar.current.style.width = `${currentTimePercentage}%`;
+  })
 
   const secondsToMinutes = (seconds: number) => {
-    const minutes = seconds / 60;
-    return minutes.toFixed(2);
+    const minutes = Math.floor(seconds / 60);
+    const remindingSeconds = seconds - (minutes * 60);
+    return `${minutes}.${remindingSeconds}`;
   }
 
   return {

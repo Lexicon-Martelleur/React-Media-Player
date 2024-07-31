@@ -1,12 +1,12 @@
-import { ReactElement } from "react";
+import { ReactElement, useEffect, useState } from "react";
 
 import { Image } from "../Image";
 import { IPlaylistItem } from "../../data";
 import { PlayController } from "../PlayController";
 import { PlayProgressBar } from "../PlayProgressBar";
 import { Icon } from "../Icon";
-import { icons } from "../../assets";
 import styles from "./PlayUnit.module.css";
+import { icons } from "../../assets";
 
 interface Props {
   playItem: IPlaylistItem;
@@ -15,6 +15,20 @@ interface Props {
 export const PlayUnit: React.FC<Props> = ({
   playItem
 }): ReactElement => {
+  const [currentTime, setCurrentTime] = useState(0);
+  const duration = 144;
+
+  // Dummy change used for demonstrate change in progress bar. 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (currentTime >= duration) { 
+        return;
+      }
+      setCurrentTime(prevTime => ++prevTime);
+    }, 1000)
+    return () => { clearInterval(interval) }
+  }, [currentTime])
+
   return (
     <section className={`${styles.playUnit} ${styles.container}`}>
       <div className={styles.playUnitFigure}>
@@ -29,7 +43,9 @@ export const PlayUnit: React.FC<Props> = ({
         <Icon icon={icons.heart} className={styles.likeIcon}/>
       </div>
       <div className={styles.playUnitProgressCtr}>
-        <PlayProgressBar duration={304} currentTime={12}/>
+        <PlayProgressBar
+          duration={duration}
+          currentTime={currentTime}/>
       </div>
       <PlayController />
     </section>
