@@ -2,8 +2,9 @@ import { ReactElement } from "react";
 
 import { IPlaylistItem } from "../../data";
 import { Image } from "../Image";
-import styles from "./PlaylistItem.module.css";
 import { PlayButton } from "../PlayButton";
+
+import styles from "./PlaylistItem.module.css";
 
 interface Props {
   playlistItem: IPlaylistItem;

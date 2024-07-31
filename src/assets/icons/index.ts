@@ -4,8 +4,9 @@ import fastRewind from "./fast_rewind.svg";
 import repeat from "./repeat.svg";
 import shuffle from "./shuffle.svg";
 import moreVertical from "./more_vertical.svg";
-import leftArrow from "./left_arrow.svg"
-
+import leftArrow from "./left_arrow.svg";
+import heart from "./heart.svg";
+import addCircle from "./add_circle.svg";
 
 export const icons = {
   play: {
@@ -42,5 +43,15 @@ export const icons = {
     src: leftArrow,
     alt: "Previouse page",
     title: "Previouse page"
+  },
+  addCircle: {
+    src: addCircle,
+    alt: "Add to favorite icon",
+    title: "Add to favorite"
+  },
+  heart: {
+    src: heart,
+    alt: "Like icon",
+    title: "Like"
   }
 } as const;

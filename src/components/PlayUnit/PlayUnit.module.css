@@ -17,10 +17,21 @@
     align-items: center;
 }
 
-.play-unit-description {
+.play-unit-like-ctr {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.play-unit-description-ctr {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.play-unit-progress-ctr {
+    width: 100%;
 }
 
 .play-unit-artist {
@@ -33,10 +44,15 @@
     font-size: 1.2rem;
 }
 
-.play-unit-description h1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.like-icon {
+    opacity: 0.5;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.like-icon:hover {
+    opacity: 1;
+    transform: scale(1.2);
 }
 
 @media (max-height: 800px) {

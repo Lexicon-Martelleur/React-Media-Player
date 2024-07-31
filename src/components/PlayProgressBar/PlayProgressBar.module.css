@@ -1,0 +1,22 @@
+.play-progress-bar-ctr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-inline: 1rem;
+    gap: 1rem;
+}
+
+.play-progress-bar-outer {
+    flex-grow: 2;
+    height: 8px;
+    background-color: var(--DARK_BG);
+}
+
+.play-progress-bar-inner {
+    flex-grow: 2;
+    height: 8px;
+    width: 0%;
+    background-color: var(--XLIGHT_BG);
+}

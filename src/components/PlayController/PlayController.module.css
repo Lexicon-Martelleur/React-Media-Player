@@ -6,6 +6,10 @@
     padding: 2rem 0.5rem;
 }
 
+.play-controller-icon {
+    cursor: pointer
+}
+
 @media (min-width: 500px) {
     .play-controller {
         padding: 2rem 4rem;
